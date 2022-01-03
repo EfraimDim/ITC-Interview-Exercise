@@ -1,4 +1,9 @@
-function App() {
+import { AppContext } from './AppContext'
+
+function Login() {
+
+    const {  } = useContext(AppContext);
+
     return (
       <div>
        
@@ -6,4 +11,4 @@ function App() {
     );
   }
   
-  export default App;
+  export default Login;

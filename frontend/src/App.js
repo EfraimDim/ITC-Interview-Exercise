@@ -12,6 +12,7 @@ function App() {
       setLoginInfo
     }}>
     <div>
+      
       {loginInfo ? <InformationPage/> : <Login/>}
      
     </div>
