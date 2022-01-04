@@ -6,19 +6,17 @@ const sequelize = require('../config')
 
 
    class Department extends Model {
-    static associate(models) {
-      this.hasMany(models.Dept_Manager, {
-        foreignKey: 'dept_no'
-      })
-    }
+ 
   }
+  
   Department.init(
     {
-    dept_no: {
-        type: DataTypes.STRING,
-        primaryKey: true
-          }, 
-     dept_name: DataTypes.STRING,
+      dept_no:  {
+        type: DataTypes.BIGINT,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      dept_name: DataTypes.STRING,
     },
     {
       sequelize,
@@ -28,6 +26,8 @@ const sequelize = require('../config')
       underscore: true,
     },
   );
+
+
 
  
 

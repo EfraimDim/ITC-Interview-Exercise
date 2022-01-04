@@ -40,8 +40,34 @@ const Salary = require('./salaries')
   Salary.belongsTo(Employee, {
     foreignKey: 'emp_no'
   })
-  Department.belongsToMany(Employee , { through: Dept_Emp, Dept_Manager })
-  Employee.belongsToMany(Department , { through: Dept_Emp, Dept_Manager })
+  Employee.hasMany(Dept_Emp, {
+    foreignKey: 'emp_no'
+  })
+  Employee.hasMany(Dept_Manager, {
+    foreignKey: 'emp_no'
+  })
+  Dept_Manager.belongsTo(Employee, {
+    foreignKey: 'emp_no'
+  })
+  Dept_Emp.belongsTo(Employee, {
+    foreignKey: 'emp_no'
+  })
+  Department.hasMany(Dept_Emp, {
+    foreignKey: 'dept_no'
+  })
+  Department.hasMany(Dept_Manager, {
+    foreignKey: 'dept_no'
+  })
+  Dept_Manager.belongsTo(Department, {
+    foreignKey: 'dept_no'
+  })
+  Dept_Emp.belongsTo(Department, {
+    foreignKey: 'dept_no'
+  })
+  Department.belongsToMany(Employee , { through: Dept_Emp,   foreignKey: 'dept_no' })
+  Employee.belongsToMany(Department , { through: Dept_Emp,  foreignKey: 'emp_no' })
+
+  
 
   module.exports= Employee
 

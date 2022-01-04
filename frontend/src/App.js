@@ -6,10 +6,12 @@ import { AppContext } from "./components/AppContext"
 function App() {
 
   const [loginInfo, setLoginInfo] = useState(null)
+
   
   return (
     <AppContext.Provider value={{
-      setLoginInfo
+      setLoginInfo,
+      loginInfo
     }}>
     <div>
       

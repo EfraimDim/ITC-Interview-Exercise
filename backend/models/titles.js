@@ -5,12 +5,6 @@ const sequelize = require('../config')
 
 
    class Title extends Model {
-
-    static associate(models) {
-      this.hasOne(models.Employee, {
-        foreignKey: 'emp_no'
-      })
-    }
   }
   Title.init(
     {

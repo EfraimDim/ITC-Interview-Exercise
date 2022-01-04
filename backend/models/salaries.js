@@ -8,9 +8,7 @@ const Employee = require('./employees')
 
 
    class Salary extends Model {
-    static associate(models) {
-      this.belongsTo(models.Employee)
-    }
+
   }
   
   Salary.init(
@@ -32,7 +30,7 @@ const Employee = require('./employees')
   
   Salary.removeAttribute('id');
 
-  // Salary.belongsTo(Employee);
+
   
  
 

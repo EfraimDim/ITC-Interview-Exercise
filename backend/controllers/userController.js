@@ -2,13 +2,11 @@ const {numberOfEmployees, equalityGenderSalary, equalityGenderSalaryActiveEmploy
 
 exports.login = async(req, res) => {
     try {
-    // const totalEmployees = await numberOfEmployees()
-    // const equalityAllWorkers = await equalityGenderSalary()
-    // console.log(equalityAllWorkers)
-    // const equalityActiveWorkers = await equalityGenderSalaryActiveEmployee()
-    // console.log(equalityActiveWorkers)
+    const totalEmployees = await numberOfEmployees()
+    const equalityAllWorkers = await equalityGenderSalary()
+    const equalityActiveWorkers = await equalityGenderSalaryActiveEmployee()
     const payrollExpectation = await payrollExpectations()
-    res.send(req.user)
+    res.send({totalEmployees, equalityAllWorkers, equalityActiveWorkers, payrollExpectation })
     } catch (e) {
         console.log(e)
         res.status(500).send(e.message)

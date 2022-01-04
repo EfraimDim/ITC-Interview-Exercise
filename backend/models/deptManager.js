@@ -6,14 +6,6 @@ const sequelize = require('../config')
 
    class Dept_Manager extends Model {
 
-    static associate(models) {
-      this.hasOne(models.Employee, {
-        foreignKey: 'emp_no'
-      })
-      this.hasOne(models.Departments, {
-        foreignKey: 'dept_no'
-      })
-    }
   }
   Dept_Manager.init(
     {
