@@ -1,22 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
 
-const sequelize = require('../config')
+const sequelize = require('../config');
+const Department = require('./departments');
+const Dept_Emp = require('./deptEmployee')
+const Dept_Manager = require('./deptManager')
+
+const Salary = require('./salaries')
 
 
 
    class Employee extends Model {
   
-    static associate(models) {
-      this.hasMany(models.Salary, {
-        foreignKey: 'emp_no'
-      })
-      this.hasMany(models.Title, {
-        foreignKey: 'emp_no'
-      })
-      this.hasMany(models.Dept_Manager, {
-        foreignKey: 'emp_no'
-      })
-    }
   }
   Employee.init(
     {
@@ -25,6 +19,7 @@ const sequelize = require('../config')
         primaryKey: true,
         autoIncrement: true,
       },
+      birth_date: DataTypes.DATE,
      first_name: DataTypes.STRING,
      last_name: DataTypes.STRING,
      gender: DataTypes.STRING,
@@ -38,6 +33,15 @@ const sequelize = require('../config')
       underscore: true,
     },
   );
+
+  Employee.hasMany(Salary, {
+    foreignKey: 'emp_no'
+  })
+  Salary.belongsTo(Employee, {
+    foreignKey: 'emp_no'
+  })
+  Department.belongsToMany(Employee , { through: Dept_Emp, Dept_Manager })
+  Employee.belongsToMany(Department , { through: Dept_Emp, Dept_Manager })
 
   module.exports= Employee
 

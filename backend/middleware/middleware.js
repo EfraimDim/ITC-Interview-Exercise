@@ -3,7 +3,8 @@ exports.checkPassword = async(req, res, next) => {
     try {
         const { employeeID, password } = req.body
         const user = await Employee.findByPk(employeeID);
-        if(user.dataValues.hire_date === password){
+        console.log(user)
+        if(user.dataValues.birth_date === password){
         req.user = user
         next()
     }

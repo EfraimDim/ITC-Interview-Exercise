@@ -1,17 +1,18 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 
 const sequelize = require('../config')
+
+const Employee = require('./employees')
 
 
 
 
    class Salary extends Model {
     static associate(models) {
-      this.hasOne(models.Employee, {
-        foreignKey: 'emp_no'
-      })
+      this.belongsTo(models.Employee)
     }
   }
+  
   Salary.init(
     {
       emp_no: DataTypes.BIGINT, 
@@ -28,7 +29,11 @@ const sequelize = require('../config')
     },
   );
 
+  
   Salary.removeAttribute('id');
+
+  // Salary.belongsTo(Employee);
+  
  
 
   module.exports= Salary
