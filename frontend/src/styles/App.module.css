@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+    background-color: #121c24;
+    font-family: sans-serif;
+}
+.loadingButton {
+    width: fit-content;
+    height: fit-content;
+    margin:auto;
+    margin-top: 50vh
+}

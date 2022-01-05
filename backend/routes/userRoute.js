@@ -5,15 +5,10 @@ const {
   checkPassword
 } = require('../middleware/middleware');
 
- 
 router.post(
     '/login',
     checkPassword,
     usersController.login
 )
-
-
-
-
 
 module.exports = router;

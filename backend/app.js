@@ -10,6 +10,4 @@ const usersRoute = require('./routes/userRoute');
 
 app.use('/users', usersRoute);
 
-
-
 module.exports = app;

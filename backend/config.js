@@ -6,6 +6,6 @@ const sequelize = new Sequelize({
     username: 'postgres',
     port: 5433,
     database: 'postgres'
-  });
+});
 
-  module.exports = sequelize;
+module.exports = sequelize;
