@@ -59,7 +59,7 @@ function Login() {
           InputLabelProps = {{style: { color: '#fff' }}} sx = {{margin:"20px"}} inputProps = {{ style: {color: 'white'}}}  label = "Employee ID" />
           
           <TextField size="large" required type="text" value={password} onChange={handlePassword} 
-          InputLabelProps={{style: { color: '#fff' }}} sx={{margin:"20px"}} inputProps={{ style: {color: 'white'}}}  label="Birth Date: xxxx-xx-xx" />
+          InputLabelProps={{style: { color: '#fff' }}} sx={{margin:"20px"}} inputProps={{ style: {color: 'white'}, minLength: 10, maxLength: 10}}  label="Birth Date: xxxx-xx-xx" />
           <button className={styles.button} type='submit'>Enter!</button>
         </form>
       </div>
