@@ -13,6 +13,6 @@ router.post(
     validateBody(schemas.loginSchemaAJV),
     checkPassword,
     usersController.login
-)
+);
 
 module.exports = router;

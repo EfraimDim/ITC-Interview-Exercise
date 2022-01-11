@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 
-const sequelize = require('../config')
+const sequelize = require('../sequelizeDatabaseConfig');
 
 class Department extends Model {
-}
+};
   
 Department.init(
   {
@@ -22,4 +22,4 @@ Department.init(
     underscore: true,
     },
 );
-  module.exports= Department
+module.exports = Department;

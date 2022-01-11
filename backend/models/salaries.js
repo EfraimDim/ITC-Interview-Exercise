@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 
-const sequelize = require('../config')
+const sequelize = require('../sequelizeDatabaseConfig');
 
 class Salary extends Model {
-}
+};
 Salary.init(
   {
     emp_no: DataTypes.BIGINT, 
@@ -22,4 +22,4 @@ Salary.init(
 
 Salary.removeAttribute('id');
 
-module.exports= Salary
+module.exports = Salary;

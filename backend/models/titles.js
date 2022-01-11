@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 
-const sequelize = require('../config')
+const sequelize = require('../config');
 
 class Title extends Model {
-}
+};
 Title.init(
   {
     emp_no: DataTypes.BIGINT, 
@@ -22,4 +22,4 @@ Title.init(
 
 Title.removeAttribute('id');
 
-module.exports= Title
+module.exports = Title;

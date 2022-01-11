@@ -1,10 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 
-const sequelize = require('../config')
+const sequelize = require('../sequelizeDatabaseConfig');
 
-class Dept_Emp extends Model {
-}
-Dept_Emp.init(
+class DeptEmp extends Model {
+};
+DeptEmp.init(
   {
     emp_no: DataTypes.BIGINT, 
     dept_no: DataTypes.STRING,
@@ -14,11 +14,11 @@ Dept_Emp.init(
   {
     sequelize,
     timestamps: false,
-    modelName: 'Dept_Emp',
+    modelName: 'DeptEmp',
     tableName: 'dept_emp',
     underscore: true,
   },
 );
-Dept_Emp.removeAttribute('id');
+DeptEmp.removeAttribute('id');
 
-module.exports= Dept_Emp
+module.exports= DeptEmp;

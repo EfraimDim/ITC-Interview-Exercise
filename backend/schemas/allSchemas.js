@@ -11,9 +11,3 @@ exports.loginSchemaAJV = {
   required: [ 'employeeID', 'password' ],
   additionalProperties: false,
 };
-
-
-
-
-
-

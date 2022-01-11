@@ -1,4 +1,4 @@
-const Employee = require('../models/employees')
+const Employee = require('../models/employees');
 const Ajv = require('ajv');
 const ajv = new Ajv();
 const addFormats = require('ajv-formats');
@@ -17,16 +17,17 @@ exports.validateBody = (schema) => {
 
 exports.checkPassword = async(req, res, next) => {  
     try {
-        const { employeeID, password } = req.body
+        const { employeeID, password } = req.body;
         const user = await Employee.findByPk(employeeID);
         if(user.dataValues.birth_date === password){
-        req.user = user
-        next()
+          req.user = user;
+          next();
         }
-        else 
-        res.status(400).send('Incorrect Password')
+        else{ 
+          res.status(400).send('Incorrect Password');
+        }
     } catch (e) {
-      res.status(400).send('Incorrect EmployeeID')
+      res.status(400).send('Incorrect EmployeeID');
       console.error(e);
     }
   };

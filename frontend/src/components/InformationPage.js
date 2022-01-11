@@ -26,9 +26,9 @@ function InformationPage() {
           <>{loginInfo.equalityAllWorkers.map((queryResult, index) => {
                       return (
                         <div key={index} className={styles.infoWrapper}>
-                        <div className={styles.tableInfo}>{queryResult.gender}</div>
-                        <div className={styles.tableInfo}>{queryResult.no_emp}</div>
-                        <div className={styles.tableInfo}>{queryResult.avgSalary}</div>
+                          <div className={styles.tableInfo}>{queryResult.gender}</div>
+                          <div className={styles.tableInfo}>{queryResult.noEmp}</div>
+                          <div className={styles.tableInfo}>{queryResult.avgSalary}</div>
                         </div>
                       )
           })}</>
@@ -44,9 +44,9 @@ function InformationPage() {
           <>{loginInfo.equalityActiveWorkers.map((queryResult, index) => {
                       return (
                         <div key={index} className={styles.infoWrapper}>
-                        <div className={styles.tableInfo}>{queryResult.gender}</div>
-                        <div className={styles.tableInfo}>{queryResult.no_emp}</div>
-                        <div className={styles.tableInfo}>{queryResult.avgSalary}</div>
+                          <div className={styles.tableInfo}>{queryResult.gender}</div>
+                          <div className={styles.tableInfo}>{queryResult.noEmp}</div>
+                          <div className={styles.tableInfo}>{queryResult.avgSalary}</div>
                         </div>
                       )
           })}</>
@@ -65,12 +65,12 @@ function InformationPage() {
           <>{loginInfo.payrollExpectation.map((queryResult, index) => {
                       return (
                         <div key={index} className={styles.infoWrapper}>
-                        <div className={styles.tableInfo}>{queryResult["Departments.dept_name"]}</div>
-                        <div className={styles.tableInfo}>{queryResult["Departments.dept_no"]}</div>
-                        <div className={styles.tableInfo}>{queryResult.no_emp}</div>
-                        <div className={styles.tableInfo}>{queryResult.no_emp}</div>
-                        <div className={styles.tableInfo}>{parseInt(queryResult.sumSalary) / 12}</div>
-                        <div className={styles.tableInfo}>{queryResult.sumSalary}</div>
+                          <div className={styles.tableInfo}>{queryResult["Departments.dept_name"]}</div>
+                          <div className={styles.tableInfo}>{queryResult["Departments.dept_no"]}</div>
+                          <div className={styles.tableInfo}>{queryResult.noEmp}</div>
+                          <div className={styles.tableInfo}>{queryResult.noEmp}</div>
+                          <div className={styles.tableInfo}>{parseInt(queryResult.sumSalary) / 12}</div>
+                          <div className={styles.tableInfo}>{queryResult.sumSalary}</div>
                         </div>
                       )
                 })}</>
