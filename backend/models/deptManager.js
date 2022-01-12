@@ -7,7 +7,10 @@ class DeptManager extends Model {
 
 DeptManager.init(
   {
-    emp_no: DataTypes.BIGINT, 
+    emp_no: {
+      type: DataTypes.BIGINT,
+      primaryKey: true
+    }, 
     dept_no: DataTypes.STRING,
     from_date: DataTypes.DATE,
     to_date: DataTypes.DATE

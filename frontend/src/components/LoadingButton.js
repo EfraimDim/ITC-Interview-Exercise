@@ -11,7 +11,7 @@ function LoadingButtonComponent() {
         <div className={styles.loadingButtonWrapper}>
             <LoadingButton loading={loadSpinner} className={styles.loadingButton} />
         </div>
-      )
+    );
 };
   
 export default LoadingButtonComponent;

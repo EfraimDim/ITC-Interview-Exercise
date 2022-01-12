@@ -9,7 +9,7 @@ Employee.init(
     emp_no: {
       type: DataTypes.BIGINT,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     birth_date: DataTypes.DATE,
     first_name: DataTypes.STRING,

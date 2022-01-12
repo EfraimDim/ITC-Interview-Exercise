@@ -6,7 +6,10 @@ class DeptEmp extends Model {
 };
 DeptEmp.init(
   {
-    emp_no: DataTypes.BIGINT, 
+    emp_no: {
+      type: DataTypes.BIGINT,
+      primaryKey: true
+    }, 
     dept_no: DataTypes.STRING,
     from_date: DataTypes.DATE,
     to_date: DataTypes.DATE
@@ -21,4 +24,4 @@ DeptEmp.init(
 );
 DeptEmp.removeAttribute('id');
 
-module.exports= DeptEmp;
+module.exports = DeptEmp;

@@ -6,7 +6,10 @@ class Salary extends Model {
 };
 Salary.init(
   {
-    emp_no: DataTypes.BIGINT, 
+    emp_no: {
+      type: DataTypes.BIGINT,
+      primaryKey: true
+    },  
     salary: DataTypes.BIGINT,
     from_date: DataTypes.DATE,
     to_date: DataTypes.DATE

@@ -10,7 +10,7 @@ Department.init(
     dept_no:  {
       type: DataTypes.BIGINT,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     dept_name: DataTypes.STRING,
   },
