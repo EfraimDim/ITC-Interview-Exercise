@@ -25,7 +25,7 @@ function Login() {
     try{
       e.preventDefault();
       setLoadSpinner(true);
-      const loginAuth = await axios.post('http://localhost:5000/users/login', {
+      const loginAuth = await axios.post('/users/login', {
         employeeID: employeeID,
         password: password
       });

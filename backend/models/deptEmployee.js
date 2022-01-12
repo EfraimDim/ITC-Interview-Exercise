@@ -10,7 +10,10 @@ DeptEmp.init(
       type: DataTypes.BIGINT,
       primaryKey: true
     }, 
-    dept_no: DataTypes.STRING,
+    dept_no: {
+      type: DataTypes.STRING,
+      primaryKey: true
+    },
     from_date: DataTypes.DATE,
     to_date: DataTypes.DATE
   },

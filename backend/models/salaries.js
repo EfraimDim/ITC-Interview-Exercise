@@ -9,8 +9,11 @@ Salary.init(
     emp_no: {
       type: DataTypes.BIGINT,
       primaryKey: true
-    },  
-    salary: DataTypes.BIGINT,
+    }, 
+    salary: {
+      type: DataTypes.BIGINT,
+      primaryKey: true
+    },
     from_date: DataTypes.DATE,
     to_date: DataTypes.DATE
     },
