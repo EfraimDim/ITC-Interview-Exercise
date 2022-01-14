@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import { AppContext } from './AppContext';
-import styles from '../styles/InformationPage.module.css';
+import { useContext } from "react";
+import { AppContext } from "./AppContext";
+import styles from "../styles/InformationPage.module.css";
 
 function InformationPage() {
-
   const { loginInfo, setLoginInfo } = useContext(AppContext);
 
   const logout = () => {
@@ -12,7 +11,9 @@ function InformationPage() {
 
   return (
     <div>
-      <button onClick={logout} className={styles.button}>LogOut</button>
+      <button onClick={logout} className={styles.button}>
+        LogOut
+      </button>
       <h2 className={styles.header}>Active Employees</h2>
       <h1 className={styles.info}>{loginInfo.totalEmployees}</h1>
 
@@ -32,8 +33,7 @@ function InformationPage() {
                 <div className={styles.tableInfo}>{queryResult.avgSalary}</div>
               </div>
             );
-          })
-          }
+          })}
         </>
       </div>
 
@@ -53,39 +53,37 @@ function InformationPage() {
                 <div className={styles.tableInfo}>{queryResult.avgSalary}</div>
               </div>
             );
-          })
-          }
+          })}
         </>
-        </div>
+      </div>
 
-        <h2 className={styles.header}>Payroll Forecast</h2>
-        <div className={styles.table}>
-          <div className={styles.infoWrapper}>
-            <div className={styles.tableHeader}>Department Name</div>
-            <div className={styles.tableHeader}>Department Number</div>
-            <div className={styles.tableHeader}>Active Employees</div>
-            <div className={styles.tableHeader}>No. of Salaries Expected</div>
-            <div className={styles.tableHeader}>Upcoming Monthly Payroll</div>
-            <div className={styles.tableHeader}>Yearly Payroll</div>
-          </div>
-          <>
-            {loginInfo.payrollExpectation.map((queryResult, index) => {
-              return (
-                <div key={index} className={styles.infoWrapper}>
-                  <div className={styles.tableInfo}>{queryResult["Departments.dept_name"]}</div>
-                  <div className={styles.tableInfo}>{queryResult["Departments.dept_no"]}</div>
-                  <div className={styles.tableInfo}>{queryResult.noEmp}</div>
-                  <div className={styles.tableInfo}>{queryResult.noEmp}</div>
-                  <div className={styles.tableInfo}>{parseInt(queryResult.sumSalary) / 12}</div>
-                  <div className={styles.tableInfo}>{queryResult.sumSalary}</div>
-                </div>
-              );
-              })
-              }
-            </>
+      <h2 className={styles.header}>Payroll Forecast</h2>
+      <div className={styles.table}>
+        <div className={styles.infoWrapper}>
+          <div className={styles.tableHeader}>Department Name</div>
+          <div className={styles.tableHeader}>Department Number</div>
+          <div className={styles.tableHeader}>Active Employees</div>
+          <div className={styles.tableHeader}>No. of Salaries Expected</div>
+          <div className={styles.tableHeader}>Upcoming Monthly Payroll</div>
+          <div className={styles.tableHeader}>Yearly Payroll</div>
         </div>
+        <>
+          {loginInfo.payrollExpectation.map((queryResult, index) => {
+            return (
+              <div key={index} className={styles.infoWrapper}>
+                <div className={styles.tableInfo}>{queryResult["Departments.dept_name"]}</div>
+                <div className={styles.tableInfo}>{queryResult["Departments.dept_no"]}</div>
+                <div className={styles.tableInfo}>{queryResult.noEmp}</div>
+                <div className={styles.tableInfo}>{queryResult.noEmp}</div>
+                <div className={styles.tableInfo}>{parseInt(queryResult.sumSalary) / 12}</div>
+                <div className={styles.tableInfo}>{queryResult.sumSalary}</div>
+              </div>
+            );
+          })}
+        </>
+      </div>
     </div>
   );
-};
-  
-  export default InformationPage;
+}
+
+export default InformationPage;

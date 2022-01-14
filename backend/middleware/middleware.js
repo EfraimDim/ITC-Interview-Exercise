@@ -1,39 +1,37 @@
-const Employee = require('../models/employees');
-const Ajv = require('ajv');
+const Employee = require("../models/employees");
+const Ajv = require("ajv");
 const ajv = new Ajv();
-const addFormats = require('ajv-formats');
+const addFormats = require("ajv-formats");
 addFormats(ajv);
 
 exports.validateBody = (schema) => {
-  try{
+  try {
     return (req, res, next) => {
       const valid = ajv.validate(schema, req.body);
       if (!valid) {
-        ajv.errors.forEach((error) => {
-          res.status(400).send(error);
-        })
+        res.status(400).send(ajv.errors[0]);
         return;
-      }
+      };
       next();
     };
-  } catch(e) {
+  } catch (e) {
     console.log(e);
     res.status(500).send(e.message);
   };
 };
 
-exports.checkPassword = async(req, res, next) => {  
+exports.checkPassword = async (req, res, next) => {
   try {
     const { employeeID, password } = req.body;
     const user = await Employee.findByPk(employeeID);
     if (user.dataValues.birth_date === password) {
       req.user = user;
       next();
-    } else { 
-      res.status(400).send('Incorrect Password');
+    } else {
+      res.status(400).send("Incorrect Password");
     };
-  } catch(e) {
+  } catch (e) {
     console.error(e);
-    res.status(400).send('Incorrect EmployeeID');
+    res.status(400).send("Incorrect EmployeeID");
   };
 };

@@ -1,3 +1,3 @@
-const activeEmployeeSalaryToDate = '9999-01-01';
+const ACTIVE_EMPLOYEE_SALARY_TO_DATE = '9999-01-01';
 
-module.exports = activeEmployeeSalaryToDate;
+module.exports = ACTIVE_EMPLOYEE_SALARY_TO_DATE;

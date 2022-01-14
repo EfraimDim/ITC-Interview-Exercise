@@ -1,30 +1,29 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require("sequelize");
 
-const sequelize = require('../sequelizeDatabaseConfig');
+const sequelize = require("../sequelizeDatabaseConfig");
 
-class DeptEmp extends Model {
-};
+class DeptEmp extends Model {}
 DeptEmp.init(
   {
     emp_no: {
       type: DataTypes.BIGINT,
-      primaryKey: true
-    }, 
+      primaryKey: true,
+    },
     dept_no: {
       type: DataTypes.STRING,
-      primaryKey: true
+      primaryKey: true,
     },
     from_date: DataTypes.DATE,
-    to_date: DataTypes.DATE
+    to_date: DataTypes.DATE,
   },
   {
     sequelize,
     timestamps: false,
-    modelName: 'DeptEmp',
-    tableName: 'dept_emp',
+    modelName: "DeptEmp",
+    tableName: "dept_emp",
     underscore: true,
-  },
+  }
 );
-DeptEmp.removeAttribute('id');
+DeptEmp.removeAttribute("id");
 
 module.exports = DeptEmp;

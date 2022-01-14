@@ -2,7 +2,7 @@ exports.loginSchemaAJV = {
   type: 'object',
   properties: {
     employeeID: {
-      type: "string"
+      type: "string" 
     },
     password: {
       type: "string", minLength: 10, maxLength: 10 

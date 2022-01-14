@@ -9,10 +9,10 @@ const {
 const schemas = require('../schemas/allSchemas');
 
 router.post(
-    '/login',
-    validateBody(schemas.loginSchemaAJV),
-    checkPassword,
-    usersController.login
+  '/login',
+  validateBody(schemas.loginSchemaAJV),
+  checkPassword,
+  usersController.login
 );
 
 module.exports = router;

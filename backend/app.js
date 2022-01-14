@@ -1,13 +1,13 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-require('dotenv').config();
-const cors = require('cors');
+require("dotenv").config();
+const cors = require("cors");
 
 app.use(express.json());
 app.use(cors());
 
-const usersRoute = require('./routes/userRoute');
+const usersRoute = require("./routes/userRoute");
 
-app.use('/users', usersRoute);
+app.use("/users", usersRoute);
 
 module.exports = app;
