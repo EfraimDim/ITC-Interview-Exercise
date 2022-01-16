@@ -1,11 +1,7 @@
 const app = require("../../app");
 const request = require("supertest");
 
-beforeAll(() => {
-  jest.setTimeout(30000);
-});
-
-describe("Testing users route", () => {
+describe("Testing users Login route", () => {
   test("Test login route with correct details", async () => {
     const login = await request(app)
       .post("/users/login")
