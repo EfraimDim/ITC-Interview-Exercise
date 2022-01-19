@@ -1,0 +1,38 @@
+.form {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #213443;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 30vh;
+}
+
+.header {
+    color: #f5f5f5;
+}
+
+.button{
+    width: fit-content;
+    padding: 10px;
+    cursor:pointer;
+    border-radius: 10px;
+    background-color: #121c24;
+    color: #ffffff;
+    border-style: none;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin: auto;
+}
+
+.button:active{
+    background-color: #ffffff;
+    color: #121c24;
+}
+
+.loginInputs{
+    margin: 20px;
+    color: #ffffff;
+}
